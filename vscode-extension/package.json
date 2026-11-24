@@ -1,0 +1,23 @@
+{
+  "name": "devlog-vscode",
+  "displayName": "DevLog",
+  "description": "Live, plain-English log of what changed in your project.",
+  "version": "0.1.0",
+  "publisher": "navtesh48",
+  "engines": { "vscode": "^1.85.0" },
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "devlog.openLog", "title": "DevLog: Show Live Log" },
+      { "command": "devlog.addNote", "title": "DevLog: Record a Decision" }
+    ],
+    "configuration": {
+      "title": "DevLog",
+      "properties": {
+        "devlog.api": { "type": "string", "default": "http://localhost:8080" },
+        "devlog.project": { "type": "string", "default": "default" }
+      }
+    }
+  }
+}
